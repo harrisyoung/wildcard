@@ -1,0 +1,30 @@
+<!--
+  Generated template for the UsenamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Choose Identity</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-content>
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" [(ngModel)]="username"></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-row>
+          <div></div>
+            <button ion-button (click)="navToChatPage()">Proceed</button>
+        </ion-row>
+      </ion-card>
+
+</ion-content>

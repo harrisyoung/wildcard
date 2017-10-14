@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chat's Page</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let chat of listChat | async">
+      <h3>{{chat.username}}</h3>
+      <p>{{chat.message}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-8>
+          <ion-textarea placeholder="Enter message..." [(ngModel)]="chatList.message"></ion-textarea>
+        </ion-col>
+        <ion-col col-1>
+          <ion-fab>
+            <button ion-button icon-only clear><ion-icon name="add"></ion-icon></button>
+              <ion-fab-list side="right">
+                  <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+                  <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+                </ion-fab-list>
+          </ion-fab>
+        </ion-col>
+        <ion-col col-2>
+          <button clear ion-button (click)="sendMessage(chatList)">Submit</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
